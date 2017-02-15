@@ -987,4 +987,26 @@
     return SuperGif;
 }));
 
+window.addEventListener('load', function() {
+  for (var i=0, ii=document.images.length; i < ii; i++) {
+    var img_node = document.images[i];
+    if (/.*\.gif/.test(img_node.src)) {
+      rub = new SuperGif({
+        gif: img_node,
+        auto_play: 0,
+        loop_delay: 1500,
+        show_progress_bar: false
+      });
+      rub.load(function(){
+        var canvas = rub.get_canvas();
+        canvas.addEventListener('mouseenter', function(){
+          rub.play();
+        });
+        canvas.addEventListener('mouseout', function(){
+          rub.pause();
+        });
+      });
 
+    }
+  };
+});
