@@ -994,8 +994,11 @@ window.addEventListener('load', function() {
       rub = new SuperGif({
         gif: img_node,
         auto_play: 0,
-        loop_delay: 1500,
-        show_progress_bar: false
+        loop_delay: 1000,
+        show_progress_bar: true,
+        progressbar_height: 1,
+        progressbar_foreground_color: 'rgb(205,205,205)',
+        draw_while_loading: true
       });
       rub.load(function(){
         var canvas = rub.get_canvas();

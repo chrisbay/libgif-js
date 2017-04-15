@@ -5,7 +5,14 @@
 </head>
 <body>
 
-    <img src="images/previewx.gif" rel:animated_src="images/animated.gif" />
+    <style>
+        .jsgif::after {
+            font-size: 11px;
+            content: "▶️ Hover to play";
+        }
+    </style>
+
+    <img src="images/animated.gif" rel:animated_src="images/animated.gif" />
 
     <script type="text/javascript" src="libgif.js"></script>
 
